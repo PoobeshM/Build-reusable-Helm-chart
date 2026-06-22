@@ -1,0 +1,22 @@
+replicaCount: 3
+
+config:
+  APP_ENV: prod
+  LOG_LEVEL: WARN
+
+resources:
+  limits:
+    cpu: 1000m
+    memory: 1Gi
+  requests:
+    cpu: 500m
+    memory: 512Mi
+
+ingress:
+  enabled: true
+  host: myapp.com
+
+autoscaling:
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 10
